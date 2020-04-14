@@ -20,7 +20,7 @@ Deploy Asp.net Core MVC and SQL Linux to Azure Kubernetes.
 #-----------------------------------------------------------------------------------
 # Run the Container using docker-compose
 #-----------------------------------------------------------------------------------
-# Download the project and extract to this path "C:\_1"
+# Download the project and extract to this path "C:\_1" 
 
 docker-compose -f "C:\_1\Web01\docker-compose.yml" -f "C:\_1\Web01\docker-compose.override.yml" up -d
 docker ps
