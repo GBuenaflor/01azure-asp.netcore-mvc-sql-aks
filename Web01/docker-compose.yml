@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  web01:
+    image: web01
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+        - "80:80"
+    environment:
+        ConnectionStrings__WebDataContext: "Server=sqldb01;Database=WebDataContext;User=sa;Password=VM12345!@#12345;"
+    depends_on:
+        - sqldb01
+
+  sqldb01:
+    container_name: mssql-db
+    image: "microsoft/mssql-server-linux"
+    expose:
+        - "1433"
+    environment:
+        SA_PASSWORD: "VM12345!@#12345"
+        ACCEPT_EULA: "Y"
+        MSSQL_TCP_PORT: 1433
+    ports:
+        - "1433:1433"
