@@ -24,7 +24,7 @@ stages:
       displayName: Build an image and Push To Docker Hub
       inputs:
         containerRegistry: 'gbbuenaflor'
-        repository: 'gbbuenaflor/web01aks'
+        repository: 'gbbuenaflor'
         command: 'buildAndPush'
         dockerfile: '$(Build.SourcesDirectory)/Web01/Dockerfile'
         tags: '$(tag)'
