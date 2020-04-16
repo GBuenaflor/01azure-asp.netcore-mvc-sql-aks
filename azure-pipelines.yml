@@ -1,5 +1,5 @@
 # Docker
-# Build a Docker image 
+# Build a Docker image and Push to Docker Hub 
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
@@ -23,7 +23,9 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        command: build
+        containerRegistry: 'gbbuenaflor'
+        repository: 'gbbuenaflor/web01aks'
+        command: 'buildAndPush'
         dockerfile: '$(Build.SourcesDirectory)/Web01/Dockerfile'
-        tags: |
-          $(tag)
+        tags: '$(tag)'
+
