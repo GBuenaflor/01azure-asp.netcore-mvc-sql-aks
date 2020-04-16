@@ -23,7 +23,7 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        containerRegistry: 'gbbuenaflor'
+        containerRegistry: 'dockerhubconnection'
         repository: 'gbbuenaflor'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
