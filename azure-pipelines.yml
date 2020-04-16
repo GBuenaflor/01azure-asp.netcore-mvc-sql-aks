@@ -26,6 +26,6 @@ stages:
         containerRegistry: 'gbbuenaflor'
         repository: 'gbbuenaflor/web01aks'
         command: 'buildAndPush'
-        dockerfile: **/Dockerfile'
+        dockerfile: '$(Build.SourcesDirectory)/Web01/Dockerfile'
         tags: '$(tag)'
 
