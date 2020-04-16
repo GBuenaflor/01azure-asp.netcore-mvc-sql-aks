@@ -21,7 +21,7 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
-      displayName: Build an image
+      displayName: Build an image and Push To Docker Hub
       inputs:
         containerRegistry: 'gbbuenaflor'
         repository: 'gbbuenaflor/web01aks'
