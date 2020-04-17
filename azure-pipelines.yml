@@ -23,13 +23,9 @@ stages:
   
     - task: Docker@2
       inputs:
-        command: 'build'
-        Dockerfile: '$(Build.SourcesDirectory)/Web01/Dockerfile'        
-    - task: Docker@2
-      inputs:
         containerRegistry: 'dockerhubconnection'
         repository: 'gbbuenaflor'
-        command: 'push'
+        command: 'buildAndpush'
         Dockerfile: '$(Build.SourcesDirectory)/Web01/Dockerfile'
         tags: '$(tag)'
 
