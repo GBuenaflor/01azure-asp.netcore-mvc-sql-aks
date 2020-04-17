@@ -1,5 +1,5 @@
 # Docker
-# Build a Docker image and Push to Azure Container Registry
+# Build a Docker image and Push to Docker Hub
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
@@ -24,7 +24,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'dockerhubconnection'
-        repository: 'gbbuenaflor/Web01'
+        repository: 'gbbuenaflor/Web01Aks'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/Web01/Dockerfile'
         tags: '$(tag)'
