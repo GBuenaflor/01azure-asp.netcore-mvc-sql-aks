@@ -27,6 +27,6 @@ stages:
         repository: 'gbbuenaflor'
         command: 'buildAndpush'
         Dockerfile: '$(Build.SourcesDirectory)/Web01/Dockerfile'
-        tags: '$(tag)'
+        tags: 'gbbuenaflor/web01aks:$(Build.BuildId)'
 
  
