@@ -22,7 +22,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'AzureContainerRegistryConnection'
-        repository: 'dockeracr01'
+        containerRegistry: 'dockerhubconnection'
+        repository: 'gbbuenaflor'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
