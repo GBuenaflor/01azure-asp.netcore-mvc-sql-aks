@@ -25,4 +25,4 @@ stages:
         containerRegistry: 'dockerhubconnection'
         repository: 'gbbuenaflor'
         command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+        Dockerfile: '$(Build.SourcesDirectory)/Web01/Dockerfile'
