@@ -28,7 +28,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'dockerhubconnection'
-        repository: 'gbbuenaflor/web01aks'
+        repository: 'gbbuenaflor'
         command: 'push'
         Dockerfile: '$(Build.SourcesDirectory)/Web01/Dockerfile'
         tags: 'gbbuenaflor/web01aks:$(Build.BuildId)'
