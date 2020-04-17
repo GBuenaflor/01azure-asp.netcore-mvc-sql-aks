@@ -30,6 +30,6 @@ stages:
         containerRegistry: 'dockerhubconnection'
         repository: 'gbbuenaflor'
         command: 'push'
-        tags: 'gbbuenaflor/web01aks:$(Build.BuildId)'
+        tags: 'gbbuenaflor:gbbuenaflor/web01aks:$(Build.BuildId)'
 
  
