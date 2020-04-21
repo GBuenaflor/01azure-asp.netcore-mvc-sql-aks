@@ -16,29 +16,27 @@ steps:
     secureFile: 'azure_rsa.pub'
     
 
-- task: TerraformTaskV1@0
+- task: TerraformCLI@0
   inputs:
-    provider: 'azurerm'
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure.IAC'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
+    backendType: 'azurerm'
+    ensureBackend: true
     backendServiceArm: 'AzureARMConnection'
     backendAzureRmResourceGroupName: 'Dev01-RG'
     backendAzureRmStorageAccountName: 'dev01straccnt01'
     backendAzureRmContainerName: 'dev01strcontainer01'
     backendAzureRmKey: 'kubernetes-dev01.tfstate'
 
-- task: TerraformTaskV1@0
+
+- task: TerraformCLI@0
   inputs:
-    provider: 'azurerm'
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure.IAC'
+    environmentServiceName: 'AzureARMConnection'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
-    environmentServiceNameAzureRM: 'Visual Studio Enterprise NEW(1)(2b5ee6f8-e317-4bc2-bced-a565aca7d8c1)'
-
-    
-
-
+ 
 
 
 
