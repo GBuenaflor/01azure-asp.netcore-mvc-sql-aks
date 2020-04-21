@@ -21,7 +21,7 @@ steps:
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure.IAC'
     backendType: 'azurerm'
-    backendServiceArm: 'AzureARMConnection'
+    backendServiceArm: 'AzureARMConnectionDev'
     ensureBackend: true
     backendAzureRmResourceGroupName: 'Dev01-RG'
     backendAzureRmResourceGroupLocation: 'eastus'
@@ -35,7 +35,7 @@ steps:
   inputs:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure.IAC'
-    environmentServiceName: 'AzureARMConnection'
+    environmentServiceName: 'AzureARMConnectionDev'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
 
 
