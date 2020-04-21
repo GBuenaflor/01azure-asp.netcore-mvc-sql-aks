@@ -34,7 +34,7 @@ steps:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure.IAC'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
-    environmentServiceNameAzureRM: 'AzureARMConnection'
+    environmentServiceNameAzureRM: 'Visual Studio Enterprise NEW(1)(2b5ee6f8-e317-4bc2-bced-a565aca7d8c1)'
 
 
 
