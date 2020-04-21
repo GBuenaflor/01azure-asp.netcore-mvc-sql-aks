@@ -23,5 +23,5 @@ variable cluster_name {
 }
 
 variable resource_group {
-  default = "Dev02-RG"
+  default = "Dev01-RG"
 }
