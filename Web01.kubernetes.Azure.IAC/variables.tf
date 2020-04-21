@@ -3,7 +3,7 @@ variable client_secret {}
 variable ssh_public_key {}
 
 variable environment {
-    default = "Prod"
+    default = "Dev01"
 }
 
 variable location {
@@ -15,13 +15,13 @@ variable node_count {
 }
 
 variable dns_prefix {
-  default = "k8sprod"
+  default = "k8sdev01"
 }
 
 variable cluster_name {
-  default = "k8sprod"
+  default = "k8sdev01"
 }
 
 variable resource_group {
-  default = "prod-aks01"
+  default = "dev01-aks-rg"
 }
