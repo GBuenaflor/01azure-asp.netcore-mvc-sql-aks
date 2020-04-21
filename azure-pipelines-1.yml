@@ -22,4 +22,13 @@ steps:
     backendAzureRmContainerName: 'dev01strcontainer01'
     backendAzureRmKey: 'kubernetes-dev01.tfstate'
 
+- task: TerraformTaskV1@0
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure.IAC'
+    commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
+    environmentServiceNameAzureRM: 'AzureARMConnection'
+
+
 
