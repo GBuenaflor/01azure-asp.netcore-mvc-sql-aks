@@ -1,0 +1,18 @@
+# Deploy Azure AKS using Terraform - Azure IaC
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Deploy Azure AKS using Terraform - Azure IaC. 
+  displayName: 'Run a multi-line script'
+ 
+- task: TerraformCLI@0
+  inputs:
+    command: 'destroy'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure.IAC'
+    environmentServiceName: 'AzureARMConnectionDev' 
+
