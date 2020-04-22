@@ -1,6 +1,6 @@
 #######################################################
 # Azure Terraform - Infrastructure as a Code (IaC)
-#
+# 
 ####################################################### 
 #----------------------------------------------------
 # Initial Configuration
@@ -8,8 +8,7 @@
 
 # Run this in Azure CLI
 # az login
-# az ad sp create-for-rbac -n "AzureTerraform" --role="Contributor" 
-# --scopes="/subscriptions/[SubscriptionID]"
+# az ad sp create-for-rbac -n "AzureTerraform" --role="Contributor" --scopes="/subscriptions/[SubscriptionID]"
  
 #----------------------------------------------------
 # Indentify Terraform Provider
@@ -69,6 +68,7 @@ resource "azurerm_kubernetes_cluster" "terraform-k8s" {
 
 #----------------------------------------------------
 # Create Terraform BackEnd
+# Uncomment if using AZ CLI from the Portal
 #----------------------------------------------------
 
 terraform {
@@ -76,7 +76,6 @@ terraform {
       #storage_account_name= "dev01straccnt01"  
       #access_key= var.access_key 
       #key= "dev01.k8s.tfstate"              
-      #container_name= "dev01strcontainer01"
- 
+      #container_name= "dev01strcontainer01" 
 	}
 }
