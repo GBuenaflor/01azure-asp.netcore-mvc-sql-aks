@@ -11,7 +11,7 @@
 # az ad sp create-for-rbac -n "AzureTerraform" --role="Contributor" --scopes="/subscriptions/[SubscriptionID]"
  
 #----------------------------------------------------
-# Indentify Terraform Provider
+# Azure Terraform Provider
 #----------------------------------------------------
 
 provider "azurerm" { 
