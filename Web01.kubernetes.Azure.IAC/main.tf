@@ -2,8 +2,7 @@
 # Azure Terafform - Infrastructure as a Code (IaC)
 #
 # Gerardo Buenaflor
-# Sr. Architect
-# United Nations - IOM
+# Sr. Architect 
 # 10:31 AM 4/20/2020
 #
 ####################################################### 
