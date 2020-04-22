@@ -10,22 +10,27 @@
 # - access_key
 #---------------------------------------------------- 
 
-variable subscription_id {
-   default = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" 
-    
- }
+variable subscription_id {}
 
-variable client_id       {
-    default = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
- }
+#variable subscription_id {
+#   default = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" 
+#}
 
-variable client_secret   {
-    default = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
- }
+variable client_id {}
 
-variable tenant_id       {
-    default = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
- }
+#variable client_id       {
+#    default = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+# }
+variable client_secret {}
+
+#variable client_secret   {
+#    default = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+# }
+variable tenant_id {}
+
+#variable tenant_id       {
+#    default = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+# }
 
 variable ssh_public_key {
     default = "azure_rsa.pub"
@@ -40,10 +45,10 @@ variable storage_account_name {
 }
     
 # Running Terraform Manualy, add this value:
-variable access_key {
-   default = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 
-    
-}
+variable access_key {}
+#variable access_key {
+#   default = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 
+#}
   
 variable key {
     default = "dev01.k8s.tfstate"
