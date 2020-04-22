@@ -1,17 +1,50 @@
+#######################################################
+# Azure Terafform - Infrastructure as a Code (IaC)
+#
+# Gerardo Buenaflor
+# Sr. Architect
+# United Nations - IOM
+# 10:31 AM 4/20/2020
+#
+####################################################### 
+#----------------------------------------------------
+# Initial Configuration
+#----------------------------------------------------
+
+# Run this in Azure CLI
+# az login
+# az ad sp create-for-rbac -n "AzureTerraform" --role="Contributor" 
+# --scopes="/subscriptions/[SubscriptionID]"
+ 
+#----------------------------------------------------
+# Indentify Terraform Provider
+#----------------------------------------------------
+
+provider "azurerm" { 
+  subscription_id = var.subscription_id
+  client_id       = var.client_id
+  client_secret   = var.client_secret
+  tenant_id       = var.tenant_id
+  features {}
+}
+  
+#----------------------------------------------------
+# Create Resource Group
+#----------------------------------------------------
+
 resource "azurerm_resource_group" "resource_group" {
   name     = "${var.resource_group}"
   location = var.location
 }
-
-provider "azurerm" {
-  version = "~>2.0.0"
-  features {}
-}
+ 
+#----------------------------------------------------
+# Create Azure AKS Cluster
+#----------------------------------------------------
 
 resource "azurerm_kubernetes_cluster" "terraform-k8s" {
   name                = "${var.cluster_name}_${var.environment}"
-  location            = "${var.location}"
-  resource_group_name = "${var.resource_group}"
+  location            = azurerm_resource_group.resource_group.location
+  resource_group_name = azurerm_resource_group.resource_group.name
   dns_prefix          = var.dns_prefix
 
   linux_profile {
@@ -38,11 +71,17 @@ resource "azurerm_kubernetes_cluster" "terraform-k8s" {
   }
 }
 
+
+#----------------------------------------------------
+# Create Terraform BackEnd
+#----------------------------------------------------
+
 terraform {
   backend "azurerm" {
-    # storage_account_name="<<storage_account_name>>" #OVERRIDE in TERRAFORM init
-    # access_key="<<storage_account_key>>" #OVERRIDE in TERRAFORM init
-    # key="<<env_name.k8s.tfstate>>" #OVERRIDE in TERRAFORM init
-    # container_name="<<storage_account_container_name>>" #OVERRIDE in TERRAFORM init
-  }
+      storage_account_name= "dev01straccnt01"  
+      access_key= var.subscription_id 
+      key= "dev01.k8s.tfstate"              
+      container_name= "dev01strcontainer01"
+ 
+	}
 }
