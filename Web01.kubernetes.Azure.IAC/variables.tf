@@ -10,10 +10,21 @@
 #variable tenant_id {}
 #variable ssh_public_key {}
 
-variable subscription_id = "2b5ee6f8-e317-4bc2-bced-a565aca7d8c1" 
-variable client_id       = "22146dd3-9ba9-4f63-8062-4f681a19be6f"
-variable client_secret   = "cb351e77-c2d7-4534-a357-56d15f7173f3"
-variable tenant_id       = "0a5c2b53-e3e6-45c2-aa3c-6827c8a81934"
+variable subscription_id {
+    default = "2b5ee6f8-e317-4bc2-bced-a565aca7d8c1" 
+ }
+
+variable client_id       {
+    default = "22146dd3-9ba9-4f63-8062-4f681a19be6f"
+ }
+
+variable client_secret   {
+    default = "cb351e77-c2d7-4534-a357-56d15f7173f3"
+ }
+
+variable tenant_id       {
+    default = "0a5c2b53-e3e6-45c2-aa3c-6827c8a81934"
+ }
 
 #----------------------------------------------------
 # Azure Storage Account
