@@ -9,7 +9,12 @@
 #variable client_secret {}
 #variable tenant_id {}
 #variable ssh_public_key {}
-  
+
+variable subscription_id = "2b5ee6f8-e317-4bc2-bced-a565aca7d8c1" 
+variable client_id       = "22146dd3-9ba9-4f63-8062-4f681a19be6f"
+variable client_secret   = "cb351e77-c2d7-4534-a357-56d15f7173f3"
+variable tenant_id       = "0a5c2b53-e3e6-45c2-aa3c-6827c8a81934"
+
 #----------------------------------------------------
 # Azure Storage Account
 #---------------------------------------------------- 
@@ -19,7 +24,9 @@ variable storage_account_name {
 }
     
 # Running Terraform Manualy, add this value:
-# variable access_key {}
+variable access_key {
+    default = "1qxGagOl73iVmc/KBZJvKS1aHHG/MIDS6BHRd3OXi5PFav6fNBPv3h0xhEr1zvHsaLkMzHw/UcOxMf09yNnSsQ==" 
+}
   
 variable key {
     default = "dev01.k8s.tfstate"
