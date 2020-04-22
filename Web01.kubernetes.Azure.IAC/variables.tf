@@ -1,9 +1,38 @@
+ 
+#----------------------------------------------------
+# Azure Subscription
+#----------------------------------------------------
+
+variable subscription_id {}
 variable client_id {}
 variable client_secret {}
+variable tenant_id {}
 variable ssh_public_key {}
-
+  
+#----------------------------------------------------
+# Azure Storage Account
+#---------------------------------------------------- 
+    
+variable storage_account_name {
+    default = "dev01straccnt01"
+}
+    
+variable access_key {}
+  
+variable key {
+    default = "dev01.k8s.tfstate"
+}
+  
+variable container_name {
+    default = "dev01strcontainer01"
+}
+  
+#----------------------------------------------------
+# Azure AKS Variables
+#----------------------------------------------------
+    
 variable environment {
-    default = "Dev"
+    default = "dev"
 }
 
 variable location {
@@ -15,13 +44,13 @@ variable node_count {
 }
 
 variable dns_prefix {
-  default = "k8sdev01"
+  default = "aks01"
 }
 
 variable cluster_name {
-  default = "k8sdev01"
+  default = "aks01"
 }
 
 variable resource_group {
-  default = "Dev02-RG"
+  default = "dev01-aks01-rg"
 }
