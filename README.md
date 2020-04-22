@@ -20,8 +20,15 @@ Deploy Asp.net Core MVC and SQL Linux to Azure Kubernetes.
 - Deploy asp.net core mvc and sql linux to Azure Kubernetes using HELM
   - Check the application
   - Open Kubernentes Dash Board
-
+  
 - Roll Back Update app01 to version 1 using HELM
 - Delete the app 
  
- 
+----------------------------------------------------------
+Deploy Azure Kubernetes using Terraform - IaC
+
+- Create Service Account to configure the AKS Cluster using Terraform
+- Create Azure DevOps Connections - Azure ARM
+- Install Terraform Plugins
+- Create new Azure DevOps Pipeline
+
