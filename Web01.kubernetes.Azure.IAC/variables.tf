@@ -11,19 +11,20 @@
 #---------------------------------------------------- 
 
 variable subscription_id {
-    default = "2b5ee6f8-e317-4bc2-bced-a565aca7d8c1" 
+   default = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" 
+    
  }
 
 variable client_id       {
-    default = "22146dd3-9ba9-4f63-8062-4f681a19be6f"
+    default = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
  }
 
 variable client_secret   {
-    default = "cb351e77-c2d7-4534-a357-56d15f7173f3"
+    default = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
  }
 
 variable tenant_id       {
-    default = "0a5c2b53-e3e6-45c2-aa3c-6827c8a81934"
+    default = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
  }
 
 variable ssh_public_key {
@@ -40,7 +41,8 @@ variable storage_account_name {
     
 # Running Terraform Manualy, add this value:
 variable access_key {
-    default = "1qxGagOl73iVmc/KBZJvKS1aHHG/MIDS6BHRd3OXi5PFav6fNBPv3h0xhEr1zvHsaLkMzHw/UcOxMf09yNnSsQ==" 
+   default = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 
+    
 }
   
 variable key {
