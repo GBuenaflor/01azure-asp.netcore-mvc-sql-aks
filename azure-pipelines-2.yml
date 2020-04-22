@@ -1,4 +1,4 @@
-# Deploy Azure AKS using Terraform - Azure IaC
+# Destroy Azure AKS using Terraform - Azure IaC
 
 trigger:
 - master
