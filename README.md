@@ -2,6 +2,7 @@
 
 ----------------------------------------------------------
 Deploy Asp.net Core MVC and SQL Linux to Azure Kubernetes.
+----------------------------------------------------------
 
 - Configure Development Environment using Azure VM
 - Run the Container using docker-compose
@@ -26,6 +27,7 @@ Deploy Asp.net Core MVC and SQL Linux to Azure Kubernetes.
  
 ----------------------------------------------------------
 Deploy Azure Kubernetes using Terraform - IaC
+----------------------------------------------------------
 
 - Create Service Account to configure the AKS Cluster using Terraform
 - Create Azure DevOps Connections - Azure ARM
