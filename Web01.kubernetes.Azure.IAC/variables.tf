@@ -18,9 +18,8 @@ variable storage_account_name {
     default = "dev01straccnt01"
 }
     
-variable access_key {
-    default = "1qxGagOl73iVmc/KBZJvKS1aHHG/MIDS6BHRd3OXi5PFav6fNBPv3h0xhEr1zvHsaLkMzHw/UcOxMf09yNnSsQ==" 
-}
+# Running Terraform Manualy, add this value:
+# variable access_key {}
   
 variable key {
     default = "dev01.k8s.tfstate"
