@@ -1,14 +1,14 @@
- 
 #----------------------------------------------------
 # Azure Subscription
-#----------------------------------------------------
-# Running Terraform Manualy, add this values:
-
-#variable subscription_id {}
-#variable client_id {}
-#variable client_secret {}
-#variable tenant_id {}
-#variable ssh_public_key {}
+#
+# Replace correct values :
+# - subscription_id  
+# - client_id  
+# - client_secret  
+# - tenant_id  
+# - ssh_public_key  
+# - access_key
+#---------------------------------------------------- 
 
 variable subscription_id {
     default = "2b5ee6f8-e317-4bc2-bced-a565aca7d8c1" 
