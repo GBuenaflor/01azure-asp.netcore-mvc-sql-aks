@@ -2,12 +2,13 @@
 #----------------------------------------------------
 # Azure Subscription
 #----------------------------------------------------
+# Running Terraform Manualy, add this values:
 
-variable subscription_id {}
-variable client_id {}
-variable client_secret {}
-variable tenant_id {}
-variable ssh_public_key {}
+#variable subscription_id {}
+#variable client_id {}
+#variable client_secret {}
+#variable tenant_id {}
+#variable ssh_public_key {}
   
 #----------------------------------------------------
 # Azure Storage Account
