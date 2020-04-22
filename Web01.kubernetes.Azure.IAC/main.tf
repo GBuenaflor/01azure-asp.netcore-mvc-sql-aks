@@ -1,10 +1,6 @@
 #######################################################
 # Azure Terraform - Infrastructure as a Code (IaC)
 #
-# Gerardo Buenaflor
-# Sr. Architect 
-# 10:31 AM 4/20/2020
-#
 ####################################################### 
 #----------------------------------------------------
 # Initial Configuration
@@ -78,7 +74,7 @@ resource "azurerm_kubernetes_cluster" "terraform-k8s" {
 terraform {
   backend "azurerm" {
       #storage_account_name= "dev01straccnt01"  
-      #access_key= var.subscription_id 
+      #access_key= var.access_key 
       #key= "dev01.k8s.tfstate"              
       #container_name= "dev01strcontainer01"
  
