@@ -1,5 +1,5 @@
 #######################################################
-# Azure Terafform - Infrastructure as a Code (IaC)
+# Azure Terraform - Infrastructure as a Code (IaC)
 #
 # Gerardo Buenaflor
 # Sr. Architect 
@@ -77,10 +77,10 @@ resource "azurerm_kubernetes_cluster" "terraform-k8s" {
 
 terraform {
   backend "azurerm" {
-      storage_account_name= "dev01straccnt01"  
-      access_key= var.subscription_id 
-      key= "dev01.k8s.tfstate"              
-      container_name= "dev01strcontainer01"
+      #storage_account_name= "dev01straccnt01"  
+      #access_key= var.subscription_id 
+      #key= "dev01.k8s.tfstate"              
+      #container_name= "dev01strcontainer01"
  
 	}
 }
