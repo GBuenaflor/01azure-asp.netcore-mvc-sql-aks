@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "resource_group" {
+resource "azurerm_resource_group" "Dev02-RG" {
   name     = "${var.resource_group}"
   location = var.location
 }
@@ -10,8 +10,8 @@ provider "azurerm" {
 
 resource "azurerm_kubernetes_cluster" "terraform-k8s" {
   name                = "${var.cluster_name}_${var.environment}"
-  location            = azurerm_resource_group.resource_group.location
-  resource_group_name = azurerm_resource_group.resource_group.name
+  location            = azurerm_resource_group.Dev02_RG.location
+  resource_group_name = azurerm_resource_group.Dev02_RG.name
   dns_prefix          = var.dns_prefix
 
   linux_profile {
