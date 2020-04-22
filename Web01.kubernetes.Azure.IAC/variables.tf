@@ -26,6 +26,10 @@ variable tenant_id       {
     default = "0a5c2b53-e3e6-45c2-aa3c-6827c8a81934"
  }
 
+variable ssh_public_key {
+    default = "azure_rsa.pub"
+}
+
 #----------------------------------------------------
 # Azure Storage Account
 #---------------------------------------------------- 
