@@ -74,7 +74,7 @@ resource "azurerm_kubernetes_cluster" "terraform-k8s" {
 terraform {
   backend "azurerm" {
       #storage_account_name= "dev01straccnt01"  
-      #access_key= var.access_key 
+      #access_key= "1qxGagOl73iVmc/KBZJvKS1aHHG/MIDS6BHRd3OXi5PFav6fNBPv3h0xhEr1zvHsaLkMzHw/UcOxMf09yNnSsQ==" 
       #key= "dev01.k8s.tfstate"              
       #container_name= "dev01strcontainer01" 
 	}
