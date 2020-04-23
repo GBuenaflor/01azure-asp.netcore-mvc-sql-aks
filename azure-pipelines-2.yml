@@ -30,5 +30,4 @@ steps:
     command: 'destroy'
     workingDirectory: '$(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure.IAC'
     environmentServiceName: 'AzureARMConnectionDev'
-    secureVarsFile: 'variables.tfvars'
     
