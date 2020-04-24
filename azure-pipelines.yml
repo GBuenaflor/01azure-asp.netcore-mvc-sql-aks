@@ -1,6 +1,10 @@
-# Docker
+#-----------------------------------------------------------------
 # Build a Docker image and Push to Docker Hub
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+#
+# - Add Azure DevOps Service Connection to:
+#   - DockerHub  
+#   - Github 
+#-----------------------------------------------------------------
 
 trigger:
 - master
