@@ -1,4 +1,10 @@
+#-----------------------------------------------------------------
 # Destroy Azure AKS using Terraform - Azure IaC
+#
+# - Add Azure DevOps Service Connection to:
+#   - Azure ARM 
+# 
+#-----------------------------------------------------------------
 
 trigger:
 - master
