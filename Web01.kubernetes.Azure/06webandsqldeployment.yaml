@@ -40,14 +40,14 @@ spec:
             port: container-port
           failureThreshold: 15
           periodSeconds: 10
-          initialDelaySeconds: 60
+          initialDelaySeconds: 120
         livenessProbe:
           httpGet:
             path: /
             port: container-port
           failureThreshold: 15
           periodSeconds: 10
-          initialDelaySeconds: 60
+          initialDelaySeconds: 120
 #        env:
 #          - name: ConnectionStrings__WebDataContext
 #            valueFrom:
