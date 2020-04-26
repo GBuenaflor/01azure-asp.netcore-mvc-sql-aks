@@ -80,6 +80,6 @@ stages:
         action: 'deploy'
         kubernetesServiceConnection: 'AzureKubernetesConnection'
         namespace: 'default'
-        manifests: '$(System.ArtifactsDirectory)/Web01.kubernetes.Azure/01mssql-secret.yaml $(System.ArtifactsDirectory)/Web01.kubernetes.Azure/02mssql-config-map.yaml $(System.ArtifactsDirectory)/Web01.kubernetes.Azure/03mssql-pv.azure.yaml $(System.ArtifactsDirectory)/Web01.kubernetes.Azure/04.1mssql-deployment-ext.yaml $(System.ArtifactsDirectory)/Web01.kubernetes.Azure/04mssql-deployment-ext.yaml $(System.ArtifactsDirectory)/Web01.kubernetes.Azure/04mssql-deployment.yaml $(System.ArtifactsDirectory)/Web01.kubernetes.Azure/05mvc-deployment.azure.yaml'
+        manifests: '$(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure/01mssql-secret.yaml $(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure/02mssql-config-map.yaml $(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure/03mssql-pv.azure.yaml $(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure/04.1mssql-deployment-ext.yaml $(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure/04mssql-deployment-ext.yaml $(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure/04mssql-deployment.yaml $(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure/05mvc-deployment.azure.yaml'
         containers: 'gbbuenaflor/Web01Aks:$(tag)'
  
