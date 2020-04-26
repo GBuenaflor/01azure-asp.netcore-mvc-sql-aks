@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: default
-  namespace: aks01-web
+  name: aks01-web
+  namespace: default
   labels:
     app: aks01-web
 spec:
