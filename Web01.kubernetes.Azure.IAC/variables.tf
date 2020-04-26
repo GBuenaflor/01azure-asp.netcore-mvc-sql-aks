@@ -84,6 +84,10 @@ variable cluster_name {
   default = "aks01"
 }
 
+variable vm_size {
+  default = "Standard_DS1_v2"
+}
+
 variable resource_group {
   default = "dev01-aks01-rg"
 }
