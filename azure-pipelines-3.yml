@@ -79,7 +79,7 @@ stages:
       inputs:
         action: 'deploy'
         kubernetesServiceConnection: 'AzureKubernetesConnection'
-        namespace: 'aks01-web'
+        namespace: 'default'
         manifests: '$(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure/06webandsqldeployment.yaml'
         containers: 'gbbuenaflor/Web01Aks:$(tag)'
  
