@@ -38,8 +38,6 @@ steps:
     backendAzureRmContainerName: 'dev01strcontainer01'
     backendAzureRmKey: 'kubernetes-dev01.tfstate'
 
-
-
 - task: TerraformCLI@0
   inputs:
     command: 'apply'
