@@ -1,12 +1,12 @@
-apiVersion: apps/v1.18
-kind: ConfigMap
-metadata:
-  name: mssql-connection-configmap
-  labels:
-    app: mvc
-data:
-  db-connection-string: Server=mssql-service;Database=Web01DB;User=SA;Password=VM12345!@#12345;
----
+apiVersion: apps/v1
+#kind: ConfigMap
+#metadata:
+#  name: mssql-connection-configmap
+#  labels:
+#    app: mvc
+#data:
+#  db-connection-string: Server=mssql-service;Database=Web01DB;User=SA;Password=VM12345!@#12345;
+#---
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
@@ -152,15 +152,15 @@ spec:
           failureThreshold: 15
           periodSeconds: 10
           initialDelaySeconds: 60
-        env:
-          - name: ConnectionStrings__WebDataContext
-            valueFrom:
-#              secretKeyRef:
-#                name: mssql-secret
-#                key: db-connection-string-secret
-              configMapKeyRef:
-                name: mssql-connection-configmap
-                key: db-connection-string
+#        env:
+#          - name: ConnectionStrings__WebDataContext
+#            valueFrom:
+##              secretKeyRef:
+##                name: mssql-secret
+##                key: db-connection-string-secret
+#              configMapKeyRef:
+#                name: mssql-connection-configmap
+#                key: db-connection-string
 
       restartPolicy: Always
       terminationGracePeriodSeconds: 45 
