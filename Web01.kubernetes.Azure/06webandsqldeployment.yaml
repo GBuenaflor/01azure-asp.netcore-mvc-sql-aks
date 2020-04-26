@@ -155,12 +155,12 @@ spec:
         env:
           - name: ConnectionStrings__WebDataContext
             valueFrom:
-              secretKeyRef:
-                name: mssql-secret
-                key: db-connection-string-secret
-#              configMapKeyRef:
-#                name: mssql-connection-configmap
-#                key: db-connection-string
+#              secretKeyRef:
+#                name: mssql-secret
+#                key: db-connection-string-secret
+              configMapKeyRef:
+                name: mssql-connection-configmap
+                key: db-connection-string
 
       restartPolicy: Always
       terminationGracePeriodSeconds: 45 
