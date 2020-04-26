@@ -50,7 +50,7 @@ stages:
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure'
         Contents: '$(System.DefaultWorkingDirectory)/Web01.kubernetes.Azure/*.yaml'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)/WeWeb01.kubernetes.Azure'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/Web01.kubernetes.Azure'
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
