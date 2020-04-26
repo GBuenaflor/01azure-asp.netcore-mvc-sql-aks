@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: aks01-web
+  name: default
   namespace: aks01-web
   labels:
     app: aks01-web
@@ -67,7 +67,7 @@ metadata:
   labels: #PODS
     app: aks01-web
   name: aks01-web
-  namespace: aks01-web
+  namespace: default
   
 spec:
   selector:
