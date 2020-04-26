@@ -1,3 +1,26 @@
+#######################################################
+# Azure Terraform - Infrastructure as a Code (IaC)
+# 
+# Use this two Azure DepOps Pipeline:
+# azure-pipelines-1.yml - Deploy Azure AKS using Terraform - Azure IaC
+# azure-pipelines-2.yml - Destroy Azure AKS using Terraform - Azure IaC
+# 
+# ----------------------------------------------------
+#  Initial Configuration
+# ----------------------------------------------------
+# - Run this in Azure CLI
+#   az login
+#   az ad sp create-for-rbac -n "AzureTerraform" --role="Contributor" --scopes="/subscriptions/[SubscriptionID]"
+#
+# - Then complete the variables in the variables.tf file
+#   - subscription_id  
+#   - client_id  
+#   - client_secret  
+#   - tenant_id  
+#   - ssh_public_key  
+#   - access_key
+#
+####################################################### 
 #----------------------------------------------------
 # Azure Terraform Provider
 #----------------------------------------------------
@@ -5,10 +28,6 @@
 provider "azurerm" { 
   features {}
   version = ">=2.0.0"  
-}
- 
-provider "azurerm" { 
-  features {}
   subscription_id = var.subscription_id
   client_id       = var.client_id
   client_secret   = var.client_secret
