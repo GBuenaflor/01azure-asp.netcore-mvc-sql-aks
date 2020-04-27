@@ -73,7 +73,7 @@ spec:
       containers:
       - name: mssql
         image: microsoft/mssql-server-linux
-         resources:
+        resources:
            limits:
              cpu: "2"
              memory: "2Gi"
