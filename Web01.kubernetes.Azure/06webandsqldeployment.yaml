@@ -61,7 +61,7 @@ spec:
 # Kubernetes - Deployment for SQL Linux
 #-----------------------------------------------------------------
 ---
-apiVersion: v1
+apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: mssql-deployment
