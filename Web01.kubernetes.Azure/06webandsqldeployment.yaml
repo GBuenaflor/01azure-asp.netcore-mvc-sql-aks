@@ -10,6 +10,7 @@ spec:
     matchLabels:
       app: aks01-web
   replicas: 1 # run in 2 Pods
+  minReadySeconds: 45
   strategy:
     rollingUpdate:
       maxSurge: 25%
