@@ -10,7 +10,7 @@ kind: ConfigMap
 metadata:
   name: mssql-connection-configmap
   labels:
-    app: mvc
+    app: aks01-web
 data:
   db-connection-string: Server=mssql-service;Database=Web01DB;User=SA;Password=VM12345!@#12345;  
 #-----------------------------------------------------------------
