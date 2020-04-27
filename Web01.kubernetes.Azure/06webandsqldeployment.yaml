@@ -17,6 +17,7 @@ data:
 # Kubernetes - StorageClass
 #-----------------------------------------------------------------
 ---
+apiVersion: v1
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
@@ -42,9 +43,10 @@ spec:
     requests:
       storage: 1Gi
 #-----------------------------------------------------------------
-# Kubernetes - Service for MSSQL
+# Kubernetes - Service for SQL Linux
 #-----------------------------------------------------------------
 ---
+apiVersion: v1
 kind: Service
 metadata:
   name: mssql-service-ext
@@ -57,9 +59,10 @@ spec:
       targetPort: 1433 
   type: LoadBalancer
 #-----------------------------------------------------------------
-# Kubernetes - Deployment for MSSQL
+# Kubernetes - Deployment for SQL Linux
 #-----------------------------------------------------------------
 ---
+apiVersion: v1
 kind: Deployment
 metadata:
   name: mssql-deployment
@@ -97,8 +100,8 @@ spec:
 #-----------------------------------------------------------------
 # Kubernetes - Deployment for Web App
 #-----------------------------------------------------------------
-# apiVersion: apps/v1
 ---
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: aks01-web
@@ -165,6 +168,7 @@ spec:
 # Kubernetes - Service for Web App
 #-----------------------------------------------------------------
 ---
+apiVersion: v1
 kind: Service
 apiVersion: v1
 metadata:
