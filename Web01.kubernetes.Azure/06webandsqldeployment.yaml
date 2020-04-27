@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: mvc
-        image: gbbuenaflor/web01aks:256 # #{ImageTag}# #v10 #v2.#{Build.BuildId}#
+        image: gbbuenaflor/web01aspnetcore-app:v1 # #{ImageTag}# #v10 #v2.#{Build.BuildId}#
         imagePullPolicy: Always #IfNotPresent
         ports:
         - name: container-port
