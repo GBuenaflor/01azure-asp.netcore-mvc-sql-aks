@@ -27,7 +27,7 @@ spec:
         imagePullPolicy: IfNotPresent 
         ports:
         - name: container-port
-          containerPort: 5000
+          containerPort: 80
         resources:
           limits:
             cpu: "500m"
@@ -76,7 +76,7 @@ spec:
   sessionAffinity: None 
   ports:
   - protocol: TCP
-    port: 5000
-    targetPort: 5000
-    # nodePort: 5500 
+    port: 80
+    targetPort: 80
+    # nodePort: 80 
   type: LoadBalancer
