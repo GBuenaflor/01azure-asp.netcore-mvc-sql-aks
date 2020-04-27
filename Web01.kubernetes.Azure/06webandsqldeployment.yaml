@@ -1,3 +1,10 @@
+#-----------------------------------------------------------------
+# Deploy ASP.net MVC Core and SQL Linux to AKS - Azure DevOps CICD
+# This use azure-pipelines-3.yml 
+#-----------------------------------------------------------------
+#-----------------------------------------------------------------
+# Web App
+#-----------------------------------------------------------------
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -23,7 +30,7 @@ spec:
     spec:
       containers:
       - name: aks01-web
-        image: gbbuenaflor/web01aks:{Build.BuildId} #gbbuenaflor/web01aks:263 #{ImageTag}# #v10 #v2.#{Build.BuildId}#
+        image: gbbuenaflor/web01aks:263 # Replace Image Tag #{Build.BuildId}#
         imagePullPolicy: IfNotPresent 
         ports:
         - name: container-port
