@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------
 # ConfigMap
 #-----------------------------------------------------------------
-apiVersion: apps/v1
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mssql-connection-configmap
@@ -17,8 +17,7 @@ data:
 #-----------------------------------------------------------------
 # Web App
 #-----------------------------------------------------------------
-#apiVersion: apps/v1
----
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: aks01-web
