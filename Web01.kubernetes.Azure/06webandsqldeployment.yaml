@@ -17,9 +17,8 @@ data:
 # Kubernetes - StorageClass
 #-----------------------------------------------------------------
 ---
-apiVersion: v1
-kind: StorageClass
 apiVersion: storage.k8s.io/v1
+kind: StorageClass 
 metadata:
   name: azure-disk
 provisioner: kubernetes.io/azure-disk
@@ -170,7 +169,6 @@ spec:
 ---
 apiVersion: v1
 kind: Service
-apiVersion: v1
 metadata:
   labels: #PODS
     app: aks01-web
