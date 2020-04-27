@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: aks01-web
-        image: gbbuenaflor/web01aks:v263 # #{ImageTag}# #v10 #v2.#{Build.BuildId}#
+        image: gbbuenaflor/web01aks:263 # #{ImageTag}# #v10 #v2.#{Build.BuildId}#
         imagePullPolicy: IfNotPresent 
         ports:
         - name: container-port
