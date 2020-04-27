@@ -28,7 +28,8 @@ parameters:
 # Kubernetes - PersistentVolumeClaim
 #-----------------------------------------------------------------
 ---
-kind: PersistentVolume
+apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
   name: mssql-pv-claim
   annotations: 
