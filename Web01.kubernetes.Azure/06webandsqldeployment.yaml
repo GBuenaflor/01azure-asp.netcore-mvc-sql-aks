@@ -22,9 +22,9 @@ spec:
         app: aks01-web        
     spec:
       containers:
-      - name: mvc
+      - name: aks01-web
         image: gbbuenaflor/web01aspnetcore-app:v1 # #{ImageTag}# #v10 #v2.#{Build.BuildId}#
-        imagePullPolicy: Always #IfNotPresent
+        imagePullPolicy: IfNotPresent 
         ports:
         - name: container-port
           containerPort: 5000
