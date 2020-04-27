@@ -39,16 +39,16 @@ spec:
           httpGet:
             path: /
             port: container-port
-          failureThreshold: 15
+          failureThreshold: 5
           periodSeconds: 10
-          initialDelaySeconds: 120
+          initialDelaySeconds: 60
         livenessProbe:
           httpGet:
             path: /
             port: container-port
-          failureThreshold: 15
+          failureThreshold: 5
           periodSeconds: 10
-          initialDelaySeconds: 120
+          initialDelaySeconds: 60
 #        env:
 #          - name: ConnectionStrings__WebDataContext
 #            valueFrom:
@@ -60,7 +60,7 @@ spec:
 #                key: db-connection-string
 
       restartPolicy: Always
-      terminationGracePeriodSeconds: 45 
+      terminationGracePeriodSeconds: 30 
 ---
 kind: Service
 apiVersion: v1
