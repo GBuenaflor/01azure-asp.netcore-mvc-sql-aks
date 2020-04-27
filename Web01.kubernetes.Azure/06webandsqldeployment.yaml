@@ -3,7 +3,7 @@
 # This use azure-pipelines-3.yml 
 #-----------------------------------------------------------------
 #-----------------------------------------------------------------
-# ConfigMap
+# Kubernetes - ConfigMap
 #-----------------------------------------------------------------
 apiVersion: v1
 kind: ConfigMap
@@ -12,12 +12,92 @@ metadata:
   labels:
     app: mvc
 data:
-  db-connection-string: Server=mssql-service;Database=Web01DB;User=SA;Password=VM12345!@#12345;
-
+  db-connection-string: Server=mssql-service;Database=Web01DB;User=SA;Password=VM12345!@#12345;  
 #-----------------------------------------------------------------
-# Web App
+# Kubernetes - StorageClass
 #-----------------------------------------------------------------
-apiVersion: apps/v1
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: azure-disk
+provisioner: kubernetes.io/azure-disk
+parameters:
+  storageaccounttype: Standard_LRS  
+#-----------------------------------------------------------------
+# Kubernetes - PersistentVolumeClaim
+#-----------------------------------------------------------------
+---
+kind: PersistentVolumeClaim
+metadata:
+  name: mssql-pv-claim
+  annotations: 
+    volume.beta.kubernetes.io/storage-class: azure-disk
+spec:
+  storageClassName: default
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+#-----------------------------------------------------------------
+# Kubernetes - Service for MSSQL
+#-----------------------------------------------------------------
+---
+kind: Service
+metadata:
+  name: mssql-service-ext
+spec:
+  selector:
+    app: mssql
+  ports:
+    - protocol: TCP
+      port: 1433
+      targetPort: 1433 
+  type: LoadBalancer
+#-----------------------------------------------------------------
+# Kubernetes - Deployment for MSSQL
+#-----------------------------------------------------------------
+---
+kind: Deployment
+metadata:
+  name: mssql-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mssql
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: mssql
+        image: microsoft/mssql-server-linux
+         resources:
+           limits:
+             cpu: "2"
+             memory: "2Gi"
+           requests:
+             cpu: "0.5"
+        ports:
+        - containerPort: 1433
+        env:
+        - name: ACCEPT_EULA
+          value: "Y"
+        - name: SA_PASSWORD
+          value: "VM12345!@#12345"
+        volumeMounts:
+        - name: mssql-persistent-storage
+          mountPath: /var/opt/mssql
+      volumes:
+      - name: mssql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mssql-pv-claim
+#-----------------------------------------------------------------
+# Kubernetes - Deployment for Web App
+#-----------------------------------------------------------------
+# apiVersion: apps/v1
+---
 kind: Deployment
 metadata:
   name: aks01-web
@@ -68,18 +148,21 @@ spec:
           failureThreshold: 5
           periodSeconds: 10
           initialDelaySeconds: 60
-#        env:
-#          - name: ConnectionStrings__WebDataContext
-#            valueFrom:
+        env:
+          - name: ConnectionStrings__WebDataContext
+            valueFrom:
 ##              secretKeyRef:
 ##                name: mssql-secret
 ##                key: db-connection-string-secret
-#              configMapKeyRef:
-#                name: mssql-connection-configmap
-#                key: db-connection-string
+              configMapKeyRef:
+                name: mssql-connection-configmap
+                key: db-connection-string
 
       restartPolicy: Always
-      terminationGracePeriodSeconds: 30 
+      terminationGracePeriodSeconds: 30
+#-----------------------------------------------------------------
+# Kubernetes - Service for Web App
+#-----------------------------------------------------------------
 ---
 kind: Service
 apiVersion: v1
