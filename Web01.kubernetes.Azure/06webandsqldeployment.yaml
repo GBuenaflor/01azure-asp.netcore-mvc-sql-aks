@@ -125,8 +125,10 @@ spec:
     spec:
       containers:
       - name: aks01-web
-        image: gbbuenaflor/web01aspnetcore-app:v1 # Replace Image Tag #{Build.BuildId}#
+        image: gbbuenaflor/web01aks:299 # Replace Image Tag #{Build.BuildId}#
         imagePullPolicy: IfNotPresent 
+        depends_on:
+        - mssql-deployment
         ports:
         - name: container-port
           containerPort: 80
