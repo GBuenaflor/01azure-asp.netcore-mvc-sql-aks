@@ -56,7 +56,8 @@ spec:
   ports:
     - protocol: TCP
       port: 1433
-      targetPort: 1433 
+      targetPort: 1433
+      nodePort: 30200
   type: NodePort
 #-----------------------------------------------------------------
 # Kubernetes - Service for SQL Linux - External
@@ -144,7 +145,7 @@ spec:
     spec:
       containers:
       - name: aks01-web
-        image: gbbuenaflor/web01aks:301 # Replace Image Tag #{Build.BuildId}#
+        image: gbbuenaflor/web01aks:302 # Replace Image Tag #{Build.BuildId}#
         imagePullPolicy: IfNotPresent         
         ports:
         - name: container-port
