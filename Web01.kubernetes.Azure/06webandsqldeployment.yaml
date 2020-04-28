@@ -12,7 +12,7 @@ metadata:
   labels:
     app: aks01-web
 data:
-  db-connection-string: Server=sqldb01;Database=WebDataContext;User=sa;Password=VM12345!@#12345;  
+  db-connection-string: Server=sqldb01;Database=WebDataContext;User=sa;Password=VM12345!@#12345  
 #-----------------------------------------------------------------
 # Kubernetes - StorageClass
 #-----------------------------------------------------------------
@@ -125,7 +125,7 @@ spec:
     spec:
       containers:
       - name: aks01-web
-        image: gbbuenaflor/web01aks:283 # Replace Image Tag #{Build.BuildId}#
+        image: gbbuenaflor/web01aks:286 # Replace Image Tag #{Build.BuildId}#
         imagePullPolicy: IfNotPresent 
         ports:
         - name: container-port
