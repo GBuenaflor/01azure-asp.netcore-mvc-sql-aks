@@ -74,7 +74,7 @@ variable cluster_name {
 }
 
 variable vm_size {
-  default = "Standard_DS2_v3" # "Standard_DS1_v2"
+  default = "Standard_D2_v3" # "Standard_DS1_v2"
 }
 
 variable resource_group {
