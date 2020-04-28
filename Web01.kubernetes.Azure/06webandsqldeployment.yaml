@@ -12,7 +12,7 @@ metadata:
   labels:
     app: aks01-web
 data:
-  db-connection-string: Server=mssql;Database=WebDataContext;User=SA;Password=VM12345!@#12345;
+  db-connection-string: Server=mssql-service-int;Database=WebDataContext;User=SA;Password=VM12345!@#12345;
 #-----------------------------------------------------------------
 # Kubernetes - StorageClass
 #-----------------------------------------------------------------
@@ -23,7 +23,8 @@ metadata:
   name: azure-disk
 provisioner: kubernetes.io/azure-disk
 parameters:
-  storageaccounttype: Standard_LRS  
+  storageaccounttype: Standard_LRS
+  kind: Managed
 #-----------------------------------------------------------------
 # Kubernetes - PersistentVolumeClaim
 #-----------------------------------------------------------------
