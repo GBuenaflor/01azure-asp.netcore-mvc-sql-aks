@@ -49,6 +49,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mssql-service-int
+  namespace: default
 spec:
   selector:
     app: mssql
@@ -65,6 +66,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mssql-service-ext
+  namespace: default
 spec:
   selector:
     app: mssql
@@ -81,6 +83,7 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: mssql-deployment
+  namespace: default
 spec:
   replicas: 1
   template:
@@ -141,7 +144,7 @@ spec:
     spec:
       containers:
       - name: aks01-web
-        image: gbbuenaflor/web01aks:300 # Replace Image Tag #{Build.BuildId}#
+        image: gbbuenaflor/web01aks:301 # Replace Image Tag #{Build.BuildId}#
         imagePullPolicy: IfNotPresent         
         ports:
         - name: container-port
