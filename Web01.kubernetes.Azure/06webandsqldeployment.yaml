@@ -12,7 +12,7 @@ metadata:
   labels:
     app: aks01-web
 data:
-  db-connection-string: "Server=Web01DB;Database=WebDataContext;User=sa;Password=VM12345!@#12345;"  
+  db-connection-string: Server=Web01DB;Database=WebDataContext;User=sa;Password=VM12345!@#12345;
 #-----------------------------------------------------------------
 # Kubernetes - StorageClass
 #-----------------------------------------------------------------
@@ -111,7 +111,7 @@ spec:
   selector:
     matchLabels:
       app: aks01-web
-  replicas: 2 # run in 2 Pods
+  replicas: 2 # run in 2 Pod
   minReadySeconds: 45
   strategy:
     rollingUpdate:
