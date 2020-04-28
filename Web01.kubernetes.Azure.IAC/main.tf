@@ -35,16 +35,16 @@ provider "azurerm" {
 }
 
 #----------------------------------------------------
-# Create Resource Group
+# Resource Group
 #----------------------------------------------------
 
 resource "azurerm_resource_group" "resource_group" {
-  name     = "${var.resource_group}"
+  name     = var.resource_group
   location = var.location
 }
  
 #----------------------------------------------------
-# Create Azure AKS Cluster
+# Azure AKS Cluster
 #----------------------------------------------------
 
 resource "azurerm_kubernetes_cluster" "terraform-k8s" {
@@ -79,8 +79,7 @@ resource "azurerm_kubernetes_cluster" "terraform-k8s" {
 
 
 #----------------------------------------------------
-# Create Terraform BackEnd
-# Uncomment if using AZ CLI from the Portal
+# Terraform BackEnd
 #----------------------------------------------------
 
 terraform {
