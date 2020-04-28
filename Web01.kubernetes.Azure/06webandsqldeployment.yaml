@@ -12,7 +12,7 @@ metadata:
   labels:
     app: aks01-web
 data:
-  db-connection-string: Server=sqldb01;Database=WebDataContext;User=sa;Password=VM12345!@#12345  
+  db-connection-string: Server=Web01DB;Database=WebDataContext;User=sa;Password=VM12345!@#12345  
 #-----------------------------------------------------------------
 # Kubernetes - StorageClass
 #-----------------------------------------------------------------
