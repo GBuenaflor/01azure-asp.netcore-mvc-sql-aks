@@ -111,7 +111,7 @@ spec:
   selector:
     matchLabels:
       app: aks01-web
-  replicas: 1 # run in 2 Pods
+  replicas: 2 # run in 2 Pods
   minReadySeconds: 45
   strategy:
     rollingUpdate:
@@ -125,7 +125,7 @@ spec:
     spec:
       containers:
       - name: aks01-web
-        image: gbbuenaflor/web01aspnetcore-app:v1 # Replace Image Tag #{Build.BuildId}#
+        image: gbbuenaflor/web01aks:287 # Replace Image Tag #{Build.BuildId}#
         imagePullPolicy: IfNotPresent 
         ports:
         - name: container-port
