@@ -54,7 +54,7 @@ variable container_name {
 #----------------------------------------------------
     
 variable environment {
-    default = "dev"
+    default = "Dev"
 }
 
 variable location {
@@ -74,9 +74,9 @@ variable cluster_name {
 }
 
 variable vm_size {
-  default = "Standard_DS1_v2"
+  default = "Standard_DS2_v3" # "Standard_DS1_v2"
 }
 
 variable resource_group {
-  default = "dev01-aks01-rg"
+  default = "Dev01-aks01-RG"
 }
