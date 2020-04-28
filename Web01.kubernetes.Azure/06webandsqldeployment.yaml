@@ -42,7 +42,23 @@ spec:
     requests:
       storage: 1Gi
 #-----------------------------------------------------------------
-# Kubernetes - Service for SQL Linux
+# Kubernetes - Service for SQL Linux - Internal
+#-----------------------------------------------------------------
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mssql-service-int
+spec:
+  selector:
+    app: mssql
+  ports:
+    - protocol: TCP
+      port: 1433
+      targetPort: 1433 
+  type: NodePort
+#-----------------------------------------------------------------
+# Kubernetes - Service for SQL Linux - External
 #-----------------------------------------------------------------
 ---
 apiVersion: v1
@@ -125,10 +141,8 @@ spec:
     spec:
       containers:
       - name: aks01-web
-        image: gbbuenaflor/web01aks:299 # Replace Image Tag #{Build.BuildId}#
-        imagePullPolicy: IfNotPresent 
-        depends_on:
-        - mssql-deployment
+        image: gbbuenaflor/web01aks:300 # Replace Image Tag #{Build.BuildId}#
+        imagePullPolicy: IfNotPresent         
         ports:
         - name: container-port
           containerPort: 80
