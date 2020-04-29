@@ -146,7 +146,7 @@ spec:
     spec:
       containers:
       - name: aks01-web
-        image: gbbuenaflor/web01aks:302 # Replace Image Tag #{Build.BuildId}#
+        image: gbbuenaflor/web01aks:305 # Replace Image Tag #{Build.BuildId}#
         imagePullPolicy: IfNotPresent         
         ports:
         - name: container-port
