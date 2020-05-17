@@ -11,8 +11,7 @@ Data Flow :
 2. AzureDevOps Pipeline triggers
 3. CI Pipeline will build the images and push to container registry either Azure Container Registry or Docker Hub
 4. CD Pipeline will deploy the images from container registry to Azure Kubernetes
-5. ASP.net Core connects to SQL Linux container , this also can connect to Azure SQL DB
-   SQL Linux container use Azure Storage Account to save data.
+5. ASP.net Core connects to SQL Linux container , this also can connect to Azure SQL DB. SQL Linux container use Azure Storage Account to save data.
         
 ----------------------------------------------------------
 # Deploy Azure Kubernetes using Terraform - IaC
