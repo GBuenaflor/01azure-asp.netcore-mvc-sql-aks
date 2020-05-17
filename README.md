@@ -1,5 +1,5 @@
 ----------------------------------------------------------
-# Deploy Asp.net Core MVC and SQL Linux to Azure Kubernetes
+# Deploying Asp.net Core MVC and SQL Linux to Azure Kubernetes
 
 High Level Architecture Diagram:
 
@@ -25,3 +25,5 @@ Data Flow :
 3. Install Terraform Plugins
 4. Create new Azure DevOps Pipeline
 
+
+Note: My favorite -> Microsoft technologies, see you guys soon.
