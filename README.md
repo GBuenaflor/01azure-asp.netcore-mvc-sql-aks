@@ -1,8 +1,10 @@
 # 01azure-asp.netcore-mvc-sql-aks
 
 ----------------------------------------------------------
-Deploy Asp.net Core MVC and SQL Linux to Azure Kubernetes.
+Deploy Asp.net Core MVC and SQL Linux to Azure Kubernetes
 ----------------------------------------------------------
+
+![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/GB-AzureDevOps-AKS.png)
 
 - Configure Development Environment using Azure VM
 - Run the Container using docker-compose
