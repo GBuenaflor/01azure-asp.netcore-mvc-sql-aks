@@ -3,7 +3,6 @@
 #
 # - Add Azure DevOps Service Connection to:
 #   - Azure ARM
-#   - DockerHub or Azure Container Registry
 #   - Github
 # - Upload generated SSH key to Azure DevOps > Library > SecureFiles
 # 
