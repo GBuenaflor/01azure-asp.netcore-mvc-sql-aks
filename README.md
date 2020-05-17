@@ -1,38 +1,28 @@
-# 01azure-asp.netcore-mvc-sql-aks
-
 ----------------------------------------------------------
-Deploy Asp.net Core MVC and SQL Linux to Azure Kubernetes
+# Deploy Asp.net Core MVC and SQL Linux to Azure Kubernetes
 ----------------------------------------------------------
+High Level Architecture Diagram:
 
 ![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/GB-AzureDevOps-AKS.png)
 
-- Configure Development Environment using Azure VM
-- Run the Container using docker-compose
-- Create Azure Container Registry
-- Push Image to ACR
-- Push Image to DockerHub
+Data Flow :
 
-- Deploy AKS Cluster using Azure CLI
-  - Open Kubernentes Dash Board
-  - Generate Secret Key 
-
-- Deploy asp.net core mvc and sql linux to Azure Kubernetes
-  - Open Kubernentes Dash Board
-  - Conecting SSMS to SQL Linux Container
-  
-- Deploy asp.net core mvc and sql linux to Azure Kubernetes using HELM
-  - Check the application
-  - Open Kubernentes Dash Board
-  
-- Roll Back Update app01 to version 1 using HELM
-- Delete the app 
- 
+-- 1. Developer Checkin Code to Github
+-- 2. AzureDevOps Pipeline triggers
+-- 3. CI Pipeline will build the images and push to container registry either Azure Container Registry or Docker Hub
+-- 4. CD Pipeline will deploy the images from container registry to Azure Kubernetes
+-- 5. ASP.net Core connects to SQL Linux container , this also can connect to Azure SQL DB
+      SQL Linux container saves the data to Azure Storage Account.
+        
 ----------------------------------------------------------
-Deploy Azure Kubernetes using Terraform - IaC
+# Deploy Azure Kubernetes using Terraform - IaC
 ----------------------------------------------------------
+High Level Architecture Diagram: (To Follow)
 
-- Create Service Account to configure the AKS Cluster using Terraform
-- Create Azure DevOps Connections - Azure ARM
-- Install Terraform Plugins
-- Create new Azure DevOps Pipeline
+Data Flow :
+
+-- 1. Create Service Account to configure the AKS Cluster using Terraform
+-- 2. Create Azure DevOps Connections - Azure ARM
+-- 3. Install Terraform Plugins
+-- 4. Create new Azure DevOps Pipeline
 
