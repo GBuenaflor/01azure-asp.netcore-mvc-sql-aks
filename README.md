@@ -16,7 +16,7 @@ Data Flow :
 ----------------------------------------------------------
 # Provisioning Azure Kubernetes Service with Terraform using Azure DevOps - IaC
 
-High Level Architecture Diagram: (To Follow)
+High Level Architecture Diagram: 
 
 ![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/GB-AzureDevOps-AKS-IaC.png)
 
