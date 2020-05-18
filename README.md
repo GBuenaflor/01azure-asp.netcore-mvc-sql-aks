@@ -14,16 +14,19 @@ Data Flow :
 5. ASP.net Core connects to SQL Linux container , this also can connect to Azure SQL DB. SQL Linux container use Azure Storage Account to save data.
         
 ----------------------------------------------------------
-# Deploying Azure Kubernetes Service using Terraform using Azure DevOps - IaC
+# Provisioning Azure Kubernetes Service with Terraform using Azure DevOps - IaC
 
 High Level Architecture Diagram: (To Follow)
 
-Data Flow :
+![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/GB-AzureDevOps-AKS-IaC.png)
 
-1. Create Service Account to configure the AKS Cluster using Terraform
-2. Create Azure DevOps Connections - Azure ARM
-3. Install Terraform Plugins
-4. Create new Azure DevOps Pipeline
+Configuration Flow :
+
+1. Install Terraform Plugins to your Development Machine
+2. Check-in Terraform Codes to Github
+3. Create new Azure DevOps Release Pipeline that will provision AKS Cluster to Azure during code checkin.
+4. Terraform Apply command will provision AKS Cluster to Azure.
+5. Terraform Destroy command will de-provision AKS Cluster to Azure. Once Provisioned, Pipeline can be enable/disable.
 
 
-Note: My favorite -> Microsoft technologies, see you guys soon.
+Note: My Favorite > Microsoft Technologies
