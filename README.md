@@ -31,5 +31,9 @@ Configuration Flow :
 
 Note: During code checkin, pipeline will trigger to provision the environment to Azure.Once Provisioned, Pipeline can be enable/disable.
 
+</br>
+Link to other Microsoft Azure projects
+https://github.com/GBuenaflor/01azure
+</br>
 
 Note: My Favorite > Microsoft Technologies
