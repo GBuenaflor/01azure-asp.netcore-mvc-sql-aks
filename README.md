@@ -1,6 +1,6 @@
 ----------------------------------------------------------
 #  Azure Kubernetes Services (AKS) - Part 01 
-#  Deploying ASP.net Core MVC and SQL Linux to Azure Kubernetes Service using Azure DevOps
+##  Deploying ASP.net Core MVC and SQL Linux to Azure Kubernetes Service using Azure DevOps
 
 High Level Architecture Diagram:
 
@@ -15,7 +15,7 @@ Data Flow :
 5. ASP.net Core connects to SQL Linux container  or Azure SQL DB. SQL Linux container use Azure Storage Account to save data.
         
 ----------------------------------------------------------
-# Provisioning Azure Kubernetes Service with Terraform using Azure DevOps - IaC
+## Provisioning Azure Kubernetes Service with Terraform using Azure DevOps - IaC
 
 High Level Architecture Diagram: 
 
