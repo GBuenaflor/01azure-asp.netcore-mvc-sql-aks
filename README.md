@@ -19,7 +19,7 @@ Data Flow :
 
 High Level Architecture Diagram: 
 
-![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/GB-AzureDevOps-AKS-IaC.png)
+![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/GB-AzureDevOps-AKS-IaC02.png)
 
 Configuration Flow :
 
