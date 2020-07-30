@@ -4,7 +4,7 @@
 
 High Level Architecture Diagram:
 
-![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/GB-AzureDevOps-AKS.png)
+![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/GB-AzureDevOps-AKS02.png)
 
 Data Flow :
 
