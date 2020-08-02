@@ -6,16 +6,24 @@ Deploy Asp.net Core MVC and SQL Linux to Azure Kubernetes.
 # Configure Development Environment using Azure VM
 #-----------------------------------------------------------------------------------
 
-- Provision Azure Windows 10 EnterpriseN, Verion 1809
+- Provision Azure Windows 10 EnterpriseN, Verion 1809 , VM Size: DS2_V3
+
 - Install HyPer-V and Containers Role
+
 - Install Docker for Windows
   https://docs.docker.com/docker-for-windows/install/
+  
 - Install VS2019 Community Edition  
   https://visualstudio.microsoft.com/vs/compare/
+  
 - Install SQL Express 2017 
   https://www.microsoft.com/en-us/download/details.aspx?id=55994
+  
 - Install SSMS
-      https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?redirectedfrom=MSDN&view=sql-server-ver15
+  https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?redirectedfrom=MSDN&view=sql-server-ver15
+  
+- Install NodeJS
+  https://nodejs.org/en/download/
 
 #-----------------------------------------------------------------------------------
 # Run the Container using docker-compose
