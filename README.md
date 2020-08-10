@@ -9,10 +9,10 @@ High Level Architecture Diagram:
 Data Flow :
 
 1. Developer Checkin Code to Github
-2. AzureDevOps Pipeline triggers
+2. 2. Create a AzureDevOps Pipeline trigger and stages
 3. CI Pipeline will build the images and push to container registry either Azure Container Registry or Docker Hub
 4. CD Pipeline will deploy the images from container registry to Azure Kubernetes
-5. ASP.net Core connects to SQL Linux container  or Azure SQL DB. SQL Linux container use Azure Storage Account to save data.
+5. Connect to SQL Linux container and check where the data is stored.
 
 ----------------------------------------------------------
 ### Prerequisite: Configure Development Environment using Azure VM
@@ -293,7 +293,7 @@ helm delete --purge helm-web01;
 ``` 
  
 ----------------------------------------------------------
-### 2. AzureDevOps Pipeline triggers
+### 2. Create a AzureDevOps Pipeline trigger and stages
 
 ### Configure the Azure DevOps Pipeline to have two stages (Build and Deploy)
 ```
@@ -381,7 +381,7 @@ variables:
 ```
 
 ----------------------------------------------------------
-### 5. ASP.net Core connects to SQL Linux container or Azure SQL DB. 
+### 5. Connect to SQL Linux container and check where the data is stored.
 
 #### Connects internally 
 ```
@@ -467,7 +467,7 @@ spec:
 
 ```
 
-#### SQL Linux container use Azure Storage Account to save data.
+#### SQL Linux container use Azure Disk to save data.
 
 ```
 #-----------------------------------------------------------------
@@ -490,10 +490,29 @@ spec:
 ```
 
 
+##### Note: Azure SQL (external) can also be used.
+
 ----------------------------------------------------------
-### View the results
+### View the  Azure DevOps Pipeline result
+
+![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/Images/GB-AzureDevOps-AKS03.png)
+
+
+### View the AKS deployment dashboard
 	   
+![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/Images/GB-AzureDevOps-AKS04.png)
+
+
+
+### View the AKS services dashboard
+![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/Images/GB-AzureDevOps-AKS05.png)
+
+
 	   
+
+### Connect SQL Linux from AKS locally 	   
+![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/Images/GB-AzureDevOps-AKS06.png)
+
 
 
  
