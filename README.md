@@ -506,7 +506,7 @@ spec:
 
 	   
 
-### Connect SQL Linux from AKS locally 
+### Connect SQL Linux from AKS to VS2019 locally 
 	   
 ![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/Images/GB-AzureDevOps-AKS06.png)
 
