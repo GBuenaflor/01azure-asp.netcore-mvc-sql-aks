@@ -406,7 +406,8 @@ spec:
 
 ```
 
-#### Connects externally   
+#### Connects externally    
+```
 #-----------------------------------------------------------------
 # Kubernetes - Service for SQL Linux - External
 #-----------------------------------------------------------------
@@ -424,10 +425,9 @@ spec:
       port: 1433
       targetPort: 1433 
   type: LoadBalancer
-#-----------------------------------------------------------------
-# Kubernetes - Deployment for SQL Linux
-#-----------------------------------------------------------------
----
+  
+  
+
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
@@ -467,13 +467,9 @@ spec:
 
 ```
 
-#### SQL Linux container use Azure Disk to save data.
+#### SQL Linux container use Azure Storage Account to save data.
 
-```
-#-----------------------------------------------------------------
-# Kubernetes - PersistentVolumeClaim
-#-----------------------------------------------------------------
----
+``` 
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -510,7 +506,8 @@ spec:
 
 	   
 
-### Connect SQL Linux from AKS locally 	   
+### Connect SQL Linux from AKS locally 
+	   
 ![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/Images/GB-AzureDevOps-AKS06.png)
 
 
