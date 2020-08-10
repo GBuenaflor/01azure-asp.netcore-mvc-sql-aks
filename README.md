@@ -232,7 +232,7 @@ az aks browse --resource-group $resourcegroup --name $clusterName
 
 
 ----------------------------------------------------------
-### 1.9 Connecting SSMS to SQL Linux Container
+### 1.9 Connect SQL Linux Container
 
 ```
 - Login to Dev Machine
