@@ -9,7 +9,7 @@ High Level Architecture Diagram:
 Data Flow :
 
 1. Developer Checkin Code to Github
-2. 2. Create a AzureDevOps Pipeline trigger and stages
+2. Create a AzureDevOps Pipeline trigger and stages
 3. CI Pipeline will build the images and push to container registry either Azure Container Registry or Docker Hub
 4. CD Pipeline will deploy the images from container registry to Azure Kubernetes
 5. Connect to SQL Linux container and check where the data is stored.
@@ -122,7 +122,7 @@ az acr repository show-tags --name dev02acr --repository web01aspnetcore-app --o
 
 
 ----------------------------------------------------------
-### 1.4 Push Image to DockerHub using Azure CLI
+### 1.4 Push Images to DockerHub using Azure CLI
 
 ```
 docker login
@@ -172,7 +172,7 @@ az aks browse --resource-group Dev02 --name DevAKSCluster
 ```
 
 ----------------------------------------------------------
-### 1.6 Generate Secret Key to replace the text connectionstring
+### 1.6 Generate Secret Key to replace the text connection string
  
 ```
 echo -n 'admin' | base64
@@ -232,7 +232,7 @@ az aks browse --resource-group $resourcegroup --name $clusterName
 
 
 ----------------------------------------------------------
-### 1.9 Conecting SSMS to SQL Linux Container
+### 1.9 Connecting SSMS to SQL Linux Container
 
 ```
 - Login to Dev Machine
@@ -248,7 +248,7 @@ az aks browse --resource-group $resourcegroup --name $clusterName
   
 ```
 ----------------------------------------------------------
-### 1.10 Deploy asp.net core mvc and sql linux to Azure Kubernetes using HELM 
+### 1.10 Deploy ASP.net Core MVC and Sql Linux to Azure Kubernetes using HELM 
 
 ```
 cd /usr/csuser/clouddrive/Web01.kubernetes.Helm/
@@ -293,7 +293,7 @@ helm delete --purge helm-web01;
 ``` 
  
 ----------------------------------------------------------
-### 2. Create a AzureDevOps Pipeline trigger and stages
+### 2. Create an AzureDevOps Pipeline trigger and stages
 
 ### Configure the Azure DevOps Pipeline to have two stages (Build and Deploy)
 ```
@@ -381,7 +381,7 @@ variables:
 ```
 
 ----------------------------------------------------------
-### 5. Connect to SQL Linux container and check where the data is stored.
+### 5. Connect to SQL Linux containers and check where the data is stored.
 
 #### Connects internally 
 ```
@@ -408,9 +408,6 @@ spec:
 
 #### Connects externally    
 ```
-#-----------------------------------------------------------------
-# Kubernetes - Service for SQL Linux - External
-#-----------------------------------------------------------------
 ---
 apiVersion: v1
 kind: Service
@@ -424,10 +421,11 @@ spec:
     - protocol: TCP
       port: 1433
       targetPort: 1433 
-  type: LoadBalancer
-  
-  
-
+  type: LoadBalancer  
+#-----------------------------------------------------------------
+# Kubernetes - Deployment for SQL Linux
+#-----------------------------------------------------------------
+---
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
@@ -467,9 +465,10 @@ spec:
 
 ```
 
-#### SQL Linux container use Azure Storage Account to save data.
+#### SQL Linux container uses Azure Storage Account to save data.
 
 ``` 
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -506,7 +505,7 @@ spec:
 
 	   
 
-### Connect SQL Linux from AKS to VS2019 locally 
+### Connect SQL Linux from AKS to VS2019 locally
 	   
 ![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/Images/GB-AzureDevOps-AKS06.png)
 
