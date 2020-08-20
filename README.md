@@ -126,7 +126,7 @@ az acr repository show-tags --name dev02acr --repository web01aspnetcore-app --o
 
 ```
 docker login
-docker container list- a
+docker container list -a
 ```
 
 #### Tag the images
