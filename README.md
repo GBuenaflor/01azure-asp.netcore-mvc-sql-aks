@@ -71,26 +71,22 @@ az group create --name devRG --location eastus
 
 #### Create Azure container registry
 ```
-az acr create --resource-group myResourceGroup --name <acrName> --sku Basic --admin-enabled true
 az acr create --resource-group devRG --name dev2acr --sku Basic --admin-enabled true
 ```
 
 #### Log in to container registry
 ```
-az acr login --name <acrName>
 az acr login --name dev02acr
 ```
 
 #### Show container image from ACR
 ```
-az acr show --name <acrName> --query loginServer --output table
 az acr show --name dev02acr --query loginServer --output table
 ```
   
 #### Tag the weblinux1 image with the loginServer of container registry
 
 ```
-docker tag <Repository> <acrLoginServer>/aci-tutorial-app:v1  
 docker tag web01 dev02acr.azurecr.io/web01aspnetcore-app:v1
 docker tag  microsoft/mssql-server-linux dev02acr.azurecr.io/sqllinux:v1
 ``` 
@@ -109,14 +105,12 @@ docker push dev02acr.azurecr.io/sqllinux:v1
 
 #### List images in Azure Container Registry
 ```
-az acr repository list --name <acrName> --output table
 az acr repository list --name dev02acr --output table
 ```
 
 
 #### View the tags for a specific images
 ```
-az acr repository show-tags --name <acrName> --repository aci-tutorial-app --output table
 az acr repository show-tags --name dev02acr --repository web01aspnetcore-app --output table
 ```  
 
