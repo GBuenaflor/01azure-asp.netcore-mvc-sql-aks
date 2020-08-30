@@ -504,6 +504,8 @@ spec:
 ![Image description](https://github.com/GBuenaflor/01azure-asp.netcore-mvc-sql-aks/blob/master/Images/GB-AzureDevOps-AKS06.png)
 
 
+------------------------------------------------------------------------------
+
 Microsoft Azure Container Ecosystem - "nugget series"  > [Click this Link](https://github.com/GBuenaflor/gbuenaflor.github.io)  
 
 Note: My Favorite -> Microsoft :D
